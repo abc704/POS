@@ -1,9 +1,24 @@
-const express=require('express')
-const { getItemController, addItemController } = require('../controllers/itemController')
-const router=express.Router()
+const express = require("express");
+const {
+  getItemController,
+  addItemController,
+  editItemController,
+  deleteItemController,
+} = require("./../controllers/itemController");
 
-router.get('/get-item',getItemController)
-router.post('/add-item',addItemController)
+const router = express.Router();
 
+//routes
+//Method - get
+router.get("/get-item", getItemController);
 
-module.exports=router
+//MEthod - POST
+router.post("/add-item", addItemController);
+
+//method - PUT
+router.put("/edit-item", editItemController);
+
+//method - DELETE
+router.post("/delete-item", deleteItemController);
+
+module.exports = router;
